@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html lang="pt"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AriFran Glamour | Gestão de Stock</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#f9d156",
+                      "on-tertiary-container": "#705900",
+                      "surface-variant": "#e2e2e2",
+                      "on-secondary-fixed-variant": "#7200a2",
+                      "on-primary-fixed-variant": "#5f3c4d",
+                      "tertiary": "#735c00",
+                      "on-primary-container": "#765162",
+                      "on-secondary-container": "#4a006b",
+                      "on-surface": "#1a1c1c",
+                      "outline": "#817478",
+                      "surface": "#f9f9f9",
+                      "on-error": "#ffffff",
+                      "secondary": "#9026c3",
+                      "surface-container-lowest": "#ffffff",
+                      "on-background": "#1a1c1c",
+                      "inverse-on-surface": "#f0f1f1",
+                      "outline-variant": "#d2c3c7",
+                      "surface-tint": "#795465",
+                      "on-tertiary": "#ffffff",
+                      "on-surface-variant": "#4f4448",
+                      "on-tertiary-fixed": "#241a00",
+                      "inverse-surface": "#2f3131",
+                      "surface-dim": "#dadada",
+                      "surface-container-high": "#e8e8e8",
+                      "tertiary-fixed-dim": "#e9c349",
+                      "secondary-fixed-dim": "#e9b3ff",
+                      "on-secondary-fixed": "#310048",
+                      "on-tertiary-fixed-variant": "#574500",
+                      "surface-container": "#eeeeee",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "primary-container": "#f8c8dc",
+                      "on-error-container": "#93000a",
+                      "surface-bright": "#f9f9f9",
+                      "secondary-container": "#cb66fe",
+                      "on-primary-fixed": "#2e1221",
+                      "background": "#f9f9f9",
+                      "surface-container-low": "#f3f3f4",
+                      "inverse-primary": "#e9bacd",
+                      "tertiary-fixed": "#ffe088",
+                      "primary-fixed-dim": "#e9bacd",
+                      "primary-fixed": "#ffd8e7",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed": "#f6d9ff",
+                      "primary": "#795465",
+                      "surface-container-highest": "#e2e2e2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "base": "8px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "section-gap": "120px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "headline-sm": ["Playfair Display"],
+                      "display-lg": ["Playfair Display"],
+                      "label-sm": ["Montserrat"],
+                      "label-bold": ["Montserrat"],
+                      "headline-md": ["Playfair Display"],
+                      "display-lg-mobile": ["Playfair Display"],
+                      "body-md": ["Montserrat"],
+                      "body-lg": ["Montserrat"]
+              },
+              "fontSize": {
+                      "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .luxury-shadow {
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+        }
+        .orchid-gradient {
+            background: linear-gradient(135deg, #795465 0%, #9026c3 100%);
+        }
+        .orchid-glow:hover {
+            box-shadow: 0 0 15px rgba(144, 38, 195, 0.4);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d2c3c7;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen">
+<!-- SIDEBAR NAVIGATION -->
+<aside class="w-64 h-screen fixed left-0 top-0 bg-surface border-r border-outline-variant/30 flex flex-col py-base z-50">
+<div class="px-6 py-8">
+<h1 class="font-headline-sm text-headline-sm text-primary mb-1">AriFran Glamour</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Admin Portal</p>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-secondary-container/10 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-bold text-label-bold">Overview</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-secondary font-bold border-r-4 border-secondary bg-secondary-container/5 rounded-l-lg group transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-label-bold text-label-bold">Inventory</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-secondary-container/10 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-label-bold text-label-bold">Orders</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-secondary-container/10 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-bold text-label-bold">Customers</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-secondary-container/10 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-label-bold text-label-bold">Analytics</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-secondary-container/10 transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-bold text-label-bold">Settings</span>
+</a>
+</nav>
+<div class="p-4 mt-auto">
+<button class="w-full orchid-gradient orchid-glow text-white font-label-bold text-label-bold py-4 rounded-lg flex items-center justify-center gap-2 active:scale-95 transition-transform" onclick="document.getElementById('modal').classList.remove('hidden')">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                New Product
+            </button>
+</div>
+</aside>
+<!-- TOP APP BAR -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 flex justify-between items-center px-gutter z-40">
+<div class="flex items-center gap-4 w-1/3">
+<div class="relative w-full max-w-sm group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-body-md focus:ring-2 focus:ring-secondary/30 transition-all outline-none" placeholder="Procurar produtos..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="font-label-bold text-label-bold text-on-surface">Admin Ari</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Administrator</p>
+</div>
+<div class="w-10 h-10 rounded-full border border-outline-variant/50 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional and elegant headshot of a beauty industry administrator in a bright, modern studio. The lighting is soft and airy, emphasizing a luxurious and sophisticated persona. She has a subtle smile and is dressed in a chic, deep orchid colored blazer. High-end cosmetic product boxes are visible in the soft-focus background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0wCO0FHvqhsSeAPGPu1fh9weoKkO0tDLo_bEnCwhATwej-dz6-X92LSaRAFj61TjIcF8CNeRNmcqZJXhMvsN7rDqkj4RtPUMihL7NCd6IBHEsNW2NA3m6ICgIpR_ID6iwsuPC1lI_9kXuTNNaFIyzbj3MaFWudngYtXzq8sjA9ERzSEzQFPeFZ8goDS1q5uKF_6bZejHbnf6j6S2TPwEsdVDHOImnlkddiYTPgJNr2zd8wxsNrX-BTZi41Q26izrJVcT_k6s4nHs"/>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN CONTENT -->
+<main class="ml-64 pt-24 px-gutter pb-16 min-h-screen">
+<!-- DASHBOARD HEADER -->
+<section class="mb-10 flex justify-between items-end">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Gestão de Stock</h2>
+<p class="text-on-surface-variant font-body-md mt-1">Monitorize o inventário dos seus cosméticos de luxo em tempo real.</p>
+</div>
+<div class="flex gap-4">
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-4 luxury-shadow border border-outline-variant/10">
+<div class="bg-primary-container/30 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="inventory">inventory</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Total Itens</p>
+<p class="text-headline-sm font-headline-sm">1,284</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-4 luxury-shadow border border-outline-variant/10">
+<div class="bg-error-container/30 p-2 rounded-lg text-error">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Stock Baixo</p>
+<p class="text-headline-sm font-headline-sm">12</p>
+</div>
+</div>
+</div>
+</section>
+<!-- BENTO-INSPIRED CONTENT AREA -->
+<div class="space-y-gutter">
+<!-- FILTERS & ACTIONS -->
+<div class="flex justify-between items-center bg-surface-container-lowest p-4 rounded-2xl luxury-shadow border border-outline-variant/10">
+<div class="flex gap-2">
+<button class="px-6 py-2 rounded-full border border-secondary text-secondary font-label-bold text-label-bold hover:bg-secondary-container/10 transition-colors">Todos</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant font-label-bold text-label-bold hover:border-secondary transition-colors">Géis</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant font-label-bold text-label-bold hover:border-secondary transition-colors">Óleos</button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-on-surface-variant font-label-bold text-label-bold hover:border-secondary transition-colors">Cremes</button>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors"><span class="material-symbols-outlined" data-icon="filter_list">filter_list</span></button>
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors"><span class="material-symbols-outlined" data-icon="file_download">file_download</span></button>
+</div>
+</div>
+<!-- INVENTORY TABLE -->
+<div class="bg-surface-container-lowest rounded-3xl luxury-shadow border border-outline-variant/10 overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/30">
+<th class="py-5 px-6 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">ID</th>
+<th class="py-5 px-6 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">Produto</th>
+<th class="py-5 px-6 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">Categoria</th>
+<th class="py-5 px-6 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">Qtd. Stock</th>
+<th class="py-5 px-6 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">P. Custo</th>
+<th class="py-5 px-6 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">P. Venda</th>
+<th class="py-5 px-6 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">Vendidos</th>
+<th class="py-5 px-6 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">Lucro Semanal</th>
+<th class="py-5 px-6 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest text-right">Ações</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<!-- Row 1: LOW STOCK (CRITICAL) -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-5 px-6 font-label-sm text-on-surface-variant">#AG-001</td>
+<td class="py-5 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="Close-up photograph of a luxury gold-flecked shower gel bottle, 'AriFran Glamour' brand. Soft orchid lighting highlights the premium glass texture and the golden liquid inside. Elegant, minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxjIa0v7QUTxfSIWQ1j8wHFgJxMNza5gtGq2AcvowG6ICRVB8QtAeHhtKvwPGE8EK4FA-Y89TxSry1T2MQgfh3j3Jp8-9FlwL85H41zvPW-13-8ull7oFv1eJp_NFMdiviEIDyvC9KIQ8Mj4azpmd7YcDJ4hUhuLmWuXtTQNfpDpOVy04bC6w4YESisbRtv8y3q8DyYIM3noGTPADR3zrDoGPkxxOtt_Do7K8K_8MqqQKd2kvjYqgnqZ0xds8OmrwolufhxNZHI_c"/>
+</div>
+<span class="font-label-bold text-on-surface">Gel de Banho Ouro 24k</span>
+</div>
+</td>
+<td class="py-5 px-6 text-body-md text-on-surface-variant">Géis</td>
+<td class="py-5 px-6">
+<span class="bg-error-container text-on-error-container text-[11px] font-bold px-3 py-1 rounded-full flex items-center w-fit gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="error">error</span>
+                                    5 UNID.
+                                </span>
+</td>
+<td class="py-5 px-6 text-body-md text-on-surface-variant">€12.50</td>
+<td class="py-5 px-6 text-body-md text-on-surface-variant">€35.00</td>
+<td class="py-5 px-6 text-body-md text-on-surface-variant">142</td>
+<td class="py-5 px-6 font-label-bold text-tertiary">€3,195.00</td>
+<td class="py-5 px-6 text-right">
+<button class="text-on-surface-variant hover:text-secondary opacity-0 group-hover:opacity-100 transition-all"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<!-- Row 2: MEDIUM STOCK -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-5 px-6 font-label-sm text-on-surface-variant">#AG-002</td>
+<td class="py-5 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A minimalist, high-end design of a body oil bottle with a wooden cap. The oil is a rich amber color, sitting on a marble surface. The lighting is warm and evocative of a high-end spa. Deep orchid accents in the brand name." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoW1te8U8I2uZ_OBiHsyE7PM1DXZHlC4SDNgqLFgKrR8l1v3LT9OXfGTymYYUJjGj4dSHi5_l9LUrCribjULIZlN1ZWiKQecbIryayEFMV7ARHLf5VAe13g0rI8jCviYXme4fqCDAxvJ9lGQOtfGWxgrsCTfMuSUi-A8d-U4zXLSqC0cUzZDb8BdJiy3mMBceY5UIQoBQ_sydmqVJ5DQZDjHt88gQFs-aToxtvocnz662mAtGxudGMk9YJkQV86EkcNfsW9EbsA3s"/>
+</div>
+<span class="font-label-bold text-on-surface">Óleo Corporal Orquídea</span>
+</div>
+</td>
+<td class="py-5 px-6 text-body-md text-on-surface-variant">Óleos</td>
+<td class="py-5 px-6">
+<span class="bg-tertiary-container text-on-tertiary-container text-[11px] font-bold px-3 py-1 rounded-full flex items-center w-fit gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span>
+                                    28 UNID.
+                                </span>
+</td>
+<td class="py-5 px-6 text-body-md text-on-surface-variant">€18.00</td>
+<td class="py-5 px-6 text-body-md text-on-surface-variant">€42.00</td>
+<td class="py-5 px-6 text-body-md text-on-surface-variant">89</td>
+<td class="py-5 px-6 font-label-bold text-tertiary">€2,136.00</td>
+<td class="py-5 px-6 text-right">
+<button class="text-on-surface-variant hover:text-secondary opacity-0 group-hover:opacity-100 transition-all"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<!-- Row 3: HEALTHY STOCK -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-5 px-6 font-label-sm text-on-surface-variant">#AG-003</td>
+<td class="py-5 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="Sleek white tub of premium body cream, with soft pink label accents. The cream is being scooped out, showing its velvety texture. High-key fashion lighting, extremely clean and luxurious feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvkSlUnhIlJ4CEmFfwU_y_jpdZ0zd7Oj6_0-edYcRpa7DR1lyL9BU95n7OSUrDY0e1lvCrySa1-hMN-fqCQVzcF8ddJMNKkVhr_Vt98qawFpRU09-z8HyWeitqmlZenSxdyTJguVtlSptNjuMGM6-LPV_0R_ydZ7PpUlArClDtZfjUw6i5Ni1H6pHrgbROp0XAIWlHLBuFhkspWwggv50NgpMugYH1zgXdmDPfJaFZFPOmGpssAcO1BsUm1PQiBbJONTojNYJYdT4"/>
+</div>
+<span class="font-label-bold text-on-surface">Creme Hidratante Velvet</span>
+</div>
+</td>
+<td class="py-5 px-6 text-body-md text-on-surface-variant">Cremes</td>
+<td class="py-5 px-6">
+<span class="bg-secondary-fixed text-on-secondary-fixed text-[11px] font-bold px-3 py-1 rounded-full flex items-center w-fit gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    154 UNID.
+                                </span>
+</td>
+<td class="py-5 px-6 text-body-md text-on-surface-variant">€9.50</td>
+<td class="py-5 px-6 text-body-md text-on-surface-variant">€28.00</td>
+<td class="py-5 px-6 text-body-md text-on-surface-variant">210</td>
+<td class="py-5 px-6 font-label-bold text-tertiary">€3,885.00</td>
+<td class="py-5 px-6 text-right">
+<button class="text-on-surface-variant hover:text-secondary opacity-0 group-hover:opacity-100 transition-all"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-5 px-6 font-label-sm text-on-surface-variant">#AG-004</td>
+<td class="py-5 px-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="Close-up of a clear glass bottle with a minimalist pump. Inside is a vibrant violet gel. Studio lighting with soft gold backlights. Elegant typography for the branding 'AriFran'." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB96dk1ErqXCfFch7QkQSFbyQCfzfkricf9RclfvBlTpIP7VosofgDd0PM7J25wSsUBoBmzY25NNfHfU-FqSIVsJE3pDWFREMFfd95tnvz2l6jsRjC79uDsqBy2u5T_-gCvfT4hhLB5q4AZYPFE-d6I57urG5rwUJNI7GYkBzyHupgHZZ4DUnfkeiwo650tfbBziOaFIt0YNNCCtwg7tZzIDRuzBZtnL1Y52OLnfMIZ7AuPoQ0GbVqW8Vf8ScG1UhrHNzASPu0Sa3E"/>
+</div>
+<span class="font-label-bold text-on-surface">Gel Revitalizante Violeta</span>
+</div>
+</td>
+<td class="py-5 px-6 text-body-md text-on-surface-variant">Géis</td>
+<td class="py-5 px-6">
+<span class="bg-secondary-fixed text-on-secondary-fixed text-[11px] font-bold px-3 py-1 rounded-full flex items-center w-fit gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    82 UNID.
+                                </span>
+</td>
+<td class="py-5 px-6 text-body-md text-on-surface-variant">€11.00</td>
+<td class="py-5 px-6 text-body-md text-on-surface-variant">€32.00</td>
+<td class="py-5 px-6 text-body-md text-on-surface-variant">64</td>
+<td class="py-5 px-6 font-label-bold text-tertiary">€1,344.00</td>
+<td class="py-5 px-6 text-right">
+<button class="text-on-surface-variant hover:text-secondary opacity-0 group-hover:opacity-100 transition-all"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="p-6 bg-surface-container-low flex justify-between items-center">
+<p class="text-label-sm font-label-sm text-on-surface-variant">Mostrando 4 de 142 produtos</p>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center border border-outline-variant hover:bg-secondary-container/10 text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-secondary text-white font-label-bold">1</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center border border-outline-variant hover:bg-secondary-container/10 text-on-surface-variant transition-colors font-label-bold">2</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center border border-outline-variant hover:bg-secondary-container/10 text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="ml-64 bg-surface-container-low border-t border-outline-variant/30 py-4 flex justify-between items-center px-gutter">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 AriFran Glamour. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-opacity" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-opacity" href="#">Support</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-opacity" href="#">System Status</a>
+</div>
+</footer>
+<!-- ADD PRODUCT MODAL -->
+<div class="hidden fixed inset-0 z-[100] flex items-center justify-center p-gutter" id="modal">
+<div class="absolute inset-0 bg-inverse-surface/40 backdrop-blur-sm" onclick="document.getElementById('modal').classList.add('hidden')"></div>
+<div class="relative bg-surface w-full max-w-2xl rounded-3xl luxury-shadow border border-outline-variant/30 overflow-hidden animate-in fade-in zoom-in duration-300">
+<div class="p-8 border-b border-outline-variant/20 flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm text-primary">Adicionar Novo Produto</h3>
+<button class="text-on-surface-variant hover:text-error transition-colors" onclick="document.getElementById('modal').classList.add('hidden')">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<div class="p-8 space-y-6">
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-2 col-span-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Nome do Produto</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 focus:border-secondary focus:ring-1 focus:ring-secondary/30 rounded-xl py-3 px-4 outline-none transition-all" placeholder="Ex: Óleo de Amêndoas Gold" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Categoria</label>
+<select class="w-full bg-surface-container-low border border-outline-variant/30 focus:border-secondary rounded-xl py-3 px-4 outline-none transition-all">
+<option>Géis</option>
+<option>Óleos Corporais</option>
+<option>Cremes</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Quantidade Inicial</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 focus:border-secondary rounded-xl py-3 px-4 outline-none transition-all" placeholder="0" type="number"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Preço de Custo (€)</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 focus:border-secondary rounded-xl py-3 px-4 outline-none transition-all" placeholder="0.00" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Preço de Venda (€)</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 focus:border-secondary rounded-xl py-3 px-4 outline-none transition-all" placeholder="0.00" type="text"/>
+</div>
+</div>
+</div>
+<div class="p-8 bg-surface-container-low flex justify-end gap-4">
+<button class="px-8 py-3 rounded-xl border border-outline-variant text-on-surface-variant font-label-bold hover:bg-surface transition-colors" onclick="document.getElementById('modal').classList.add('hidden')">Cancelar</button>
+<button class="px-10 py-3 rounded-xl orchid-gradient text-white font-label-bold orchid-glow active:scale-95 transition-all">Guardar Produto</button>
+</div>
+</div>
+</div>
+<script>
+        // Micro-interactions and Lightweight atmospheric effects
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.transform = 'translateX(4px)';
+            });
+            row.addEventListener('mouseleave', () => {
+                row.style.transform = 'translateX(0)';
+            });
+            row.style.transition = 'transform 0.2s ease-out, background-color 0.2s ease-out';
+        });
+
+        // Simple Search Simulation
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                row.style.display = text.includes(query) ? '' : 'none';
+            });
+        });
+    </script>
+</body></html>

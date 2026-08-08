@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-on-secondary: #ffffff;
+  --color-surface-dim: #dadada;
+  --color-on-secondary-container: #4a006b;
+  --color-surface-variant: #e2e2e2;
+  --color-on-surface: #1a1c1c;
+  --color-secondary-fixed: #f6d9ff;
+  --color-tertiary-container: #f9d156;
+  --color-error: #ba1a1a;
+  --color-inverse-on-surface: #f0f1f1;
+  --color-secondary-fixed-dim: #e9b3ff;
+  --color-on-tertiary-fixed-variant: #574500;
+  --color-surface-container: #eeeeee;
+  --color-on-primary-fixed-variant: #5f3c4d;
+  --color-on-primary-fixed: #2e1221;
+  --color-surface-container-high: #e8e8e8;
+  --color-primary-fixed: #ffd8e7;
+  --color-on-background: #1a1c1c;
+  --color-surface-tint: #795465;
+  --color-on-surface-variant: #4f4448;
+  --color-inverse-primary: #e9bacd;
+  --color-surface-bright: #f9f9f9;
+  --color-on-secondary-fixed: #310048;
+  --color-tertiary-fixed: #ffe088;
+  --color-tertiary: #735c00;
+  --color-outline: #817478;
+  --color-on-tertiary-fixed: #241a00;
+  --color-surface-container-highest: #e2e2e2;
+  --color-inverse-surface: #2f3131;
+  --color-on-primary-container: #765162;
+  --color-on-secondary-fixed-variant: #7200a2;
+  --color-primary: #795465;
+  --color-tertiary-fixed-dim: #e9c349;
+  --color-surface: #f9f9f9;
+  --color-surface-container-low: #f3f3f4;
+  --color-on-error: #ffffff;
+  --color-outline-variant: #d2c3c7;
+  --color-primary-container: #f8c8dc;
+  --color-on-tertiary: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-primary: #ffffff;
+  --color-primary-fixed-dim: #e9bacd;
+  --color-on-error-container: #93000a;
+  --color-secondary: #9026c3;
+  --color-error-container: #ffdad6;
+  --color-secondary-container: #cb66fe;
+  --color-background: #f9f9f9;
+  --color-on-tertiary-container: #705900;
+
+  --spacing-margin-mobile: 20px;
+  --spacing-container-max: 1280px;
+  --spacing-base: 8px;
+  --spacing-section-gap: 120px;
+  --spacing-margin-desktop: 64px;
+  --spacing-gutter: 24px;
+
+  --font-display-lg-mobile: "Playfair Display", serif;
+  --font-label-sm: "Montserrat", sans-serif;
+  --font-headline-md: "Playfair Display", serif;
+  --font-display-lg: "Playfair Display", serif;
+  --font-body-lg: "Montserrat", sans-serif;
+  --font-body-md: "Montserrat", sans-serif;
+  --font-label-bold: "Montserrat", sans-serif;
+  --font-headline-sm: "Playfair Display", serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-body-md overflow-x-hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .btn-gradient {
+    background: linear-gradient(135deg, #9026c3 0%, #cb66fe 100%);
+  }
+  .soft-glow {
+    box-shadow: 0px 10px 30px rgba(144, 38, 195, 0.15);
+  }
+  .product-card-shadow {
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+  }
 }

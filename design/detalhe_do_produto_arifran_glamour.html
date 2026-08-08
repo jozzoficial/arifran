@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-PT"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AriFran Glamour | Luxury Skincare</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#dadada",
+                        "on-secondary-container": "#4a006b",
+                        "surface-variant": "#e2e2e2",
+                        "on-surface": "#1a1c1c",
+                        "secondary-fixed": "#f6d9ff",
+                        "tertiary-container": "#f9d156",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f0f1f1",
+                        "secondary-fixed-dim": "#e9b3ff",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "surface-container": "#eeeeee",
+                        "on-primary-fixed-variant": "#5f3c4d",
+                        "on-primary-fixed": "#2e1221",
+                        "surface-container-high": "#e8e8e8",
+                        "primary-fixed": "#ffd8e7",
+                        "on-background": "#1a1c1c",
+                        "surface-tint": "#795465",
+                        "on-surface-variant": "#4f4448",
+                        "inverse-primary": "#e9bacd",
+                        "surface-bright": "#f9f9f9",
+                        "on-secondary-fixed": "#310048",
+                        "tertiary-fixed": "#ffe088",
+                        "tertiary": "#735c00",
+                        "outline": "#817478",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-container-highest": "#e2e2e2",
+                        "inverse-surface": "#2f3131",
+                        "on-primary-container": "#765162",
+                        "on-secondary-fixed-variant": "#7200a2",
+                        "primary": "#795465",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "surface": "#f9f9f9",
+                        "surface-container-low": "#f3f3f4",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#d2c3c7",
+                        "primary-container": "#f8c8dc",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#e9bacd",
+                        "on-error-container": "#93000a",
+                        "secondary": "#9026c3",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#cb66fe",
+                        "background": "#f9f9f9",
+                        "on-tertiary-container": "#705900"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "section-gap": "120px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Playfair Display"],
+                        "label-sm": ["Montserrat"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Montserrat"],
+                        "body-md": ["Montserrat"],
+                        "label-bold": ["Montserrat"],
+                        "headline-sm": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .luxury-shadow {
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(144, 38, 195, 0.3);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d2c3c7;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="bg-surface sticky top-0 z-50 shadow-[0px_10px_30px_rgba(0,0,0,0.05)] h-20 transition-all duration-300">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto h-full">
+<div class="flex items-center gap-8">
+<img alt="AriFran Glamour Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIEuhdw-KLJCOGM7DBVrIXvYzhLmqbgjDxI6kxdliRzy9TWnXgv9SfQI1ZtYpQXugxQUTG9XNrwYkQzziUzHX0OqzxECVvWf4GESJMk-Gxvhc3wxWLoZmWpGwa0iIhteGuyiVDPNL2B31HTJ9sxNgyFFd6K_QGNay-wPMiDAsWej4Ww4iaVUcQ96S_3KFHZzYzB4oXAEiQg0Tb25wJwvXn_1WEw3-t-4uSzU9BkWYT-zfeHCgplGTf3rRhY8-asrwifIdS3h7ZPfo"/>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-label-bold text-label-bold text-secondary border-b-2 border-tertiary pb-1 hover:text-secondary transition-colors duration-300" href="#">Shop</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Categories</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">About Us</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-container rounded-full px-4 py-1.5 border border-outline-variant/20 focus-within:border-tertiary transition-all">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-32 lg:w-48 placeholder:text-outline-variant" placeholder="Search..." type="text"/>
+</div>
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-surface-variant transition-colors relative scale-95 active:scale-90 duration-300">
+<span class="material-symbols-outlined text-primary">shopping_cart</span>
+<span class="absolute top-1 right-1 w-4 h-4 bg-secondary text-on-secondary text-[10px] flex items-center justify-center rounded-full">0</span>
+</button>
+<button class="md:hidden flex items-center justify-center p-2">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-base md:py-16">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-8 text-on-surface-variant font-label-sm text-label-sm">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Skincare</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Luxury Face Cream</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Gallery Section -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<div class="aspect-square w-full bg-surface-container rounded-lg overflow-hidden luxury-shadow relative group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A macro studio photograph of a premium, white face cream in an elegant frosted glass jar with a soft gold lid. The product sits on a reflective marble surface against a soft, orchid-toned gradient background. The lighting is ethereal and high-key, highlighting the creamy texture of the product and the luxurious metallic details. The overall aesthetic is clean, sophisticated, and aspirational for a high-end cosmetics brand." id="main-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoDymAO5_Mw0oKHdfZQTab65A-uFOaTpLyY29zC8HTJIerJfkPs9-VnrKp4pXzaj0tv3MWgnBrWxNKd7Cdb9T9yoTvbAANSMJ9x-oh7OAl3nFnk8AknD3bVAKVOTaIVTpmW2dszHMN5LCx-UXzf9NsIx5ME1RF-R94xHqFkW2pQgfIdn799gcUgRgbOzgPsJz5pa0o3XghBJaYh5_CGAhg0oTfG3V6xVOKdJUtoxlZeFbbSCCKg5vPxvzIMj4aUqGRJAg-_TxJY2Y"/>
+<div class="absolute top-4 right-4 flex flex-col gap-2">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-label-sm font-label-bold uppercase tracking-wider">New</span>
+<span class="bg-surface/80 backdrop-blur-sm text-primary px-3 py-1 rounded-full text-label-sm font-label-bold">Vegan</span>
+</div>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<button class="aspect-square rounded-md overflow-hidden border-2 border-secondary luxury-shadow hover:opacity-80 transition-all" onclick="changeImage(0)">
+<img class="w-full h-full object-cover" data-alt="A detailed closeup of the luxury face cream texture being swiped on a smooth surface, showing its rich, pearlescent white consistency. Soft orchid and gold reflections glisten on the cream, set against a minimalist white studio background. Professional beauty photography style with soft focus edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZwDIDtv7iQcH18E3c-3TnuxR5NIoREMgfxGzNjvvynm5zlMxoxFYpaWvkDg34Wn5HZ1zHZDL39QWlbeiZfouyt0UjD5bIpDuIn_ZIVfH8IVp34Ivj601cvo3qW3i6ZML7AZDLkEGLWAPbuLv3Q0y4MbbYOvebTLZnDQd-ZF7FUIHh_nvR_K3UVc7ZvUB2Byt0-NrTUKBEnXCZvenz5157kl4wTKh6tFpH6-oQifJr8px3T9SHYOsHUDsIQ3MUnlhzm5KRc487qcg"/>
+</button>
+<button class="aspect-square rounded-md overflow-hidden border-2 border-transparent hover:border-outline-variant transition-all" onclick="changeImage(1)">
+<img class="w-full h-full object-cover" data-alt="The luxury face cream jar shown next to its premium orchid-colored packaging box. The box features delicate gold foil embossing of the AriFran Glamour logo. The setting is a minimalist vanity with a soft silk cloth and a single orchid petal. High-end lifestyle product photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB2r43XOKCNJrEjfJR9a53_bJYRq2hTXCNuCJ_0Q19z2nhdea-eNi4dFb-3oo__IuF7QBY3zpCsLOj9N_KqFHzV8M1JSPnUCxr4BCHOqFCY7KPFyqMzgnuCrZ04pgbWxYPToqhSYqQsVbgL1MwEyMSmbBxstJJ7HIS-1DBEau5tevCPPMXVGUnPtsPaNLvtG5g73Q3NWccQPqqeH8qgH_WpqHvrBiWbuFSWR0_aBU34TBJQYtCD4-Dt2aLSFdjHFQTTaA52rcDyyg"/>
+</button>
+<button class="aspect-square rounded-md overflow-hidden border-2 border-transparent hover:border-outline-variant transition-all" onclick="changeImage(2)">
+<img class="w-full h-full object-cover" data-alt="A woman's hands with perfectly manicured nails gently applying the white face cream to her cheek. The lighting is warm and flattering, emphasizing glowing, healthy skin. The background is softly blurred with tones of soft gold and lavender. High-fashion editorial beauty style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADrG94Pk2Ljcb8urCor95qXor3xxEhG2erWGQII2lCes-_APZZ5wni7UIoRM8VntUnCn2U5Kx3Y77zE6nlBdCIpvqfh_udyO3hgV3iyrtDMATnT6LN3yq6OtaFKCWpY_xyR3j7qh5YkSfUhSJfhIdmJpI49yUkEyCmxmWSWE_QioCnqH8qCdExZyTdreOzyyOqRddamJVXNpIHmPWfHJNXb6ixwH8aKzRW29h8j-U8gCOEs00KXljppsbkndd7Wws0uu2kqB0zr4k"/>
+</button>
+<button class="aspect-square rounded-md overflow-hidden border-2 border-transparent hover:border-outline-variant transition-all" onclick="changeImage(3)">
+<img class="w-full h-full object-cover" data-alt="A flat lay composition of the luxury face cream jar surrounded by its botanical ingredients like white roses and aloe vera leaves on a clean white background. Sophisticated arrangement with soft shadows and premium lighting, highlighting the natural purity of the product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy5aCoUARBONxx3fZjJRW-xyHwTC86vUK_Xe3nAGmBoqAcZtsux1b2p-Ack8nLuggOxKE7dtwYgfnHqBkK4axzrVrvZaWRzi_H3SeDXmqMOsTFY8bva7gZgK1xpkIRJxqH09rLsnAQdr9zh9aK-YbAYlsMGMZm2SASBrRVmgFmkY72NLigQBlkf4C4E1pM0hIbi9wVAYNA6xNqrIcSDmPogogTsbSoDdX94W1ib6UCy3XKJGoso1GFydxty0m5t4nRoOdRks_qknw"/>
+</button>
+</div>
+</div>
+<!-- Details Section -->
+<div class="lg:col-span-5 flex flex-col gap-8 lg:sticky lg:top-28">
+<div>
+<h1 class="font-display-lg text-headline-md lg:text-display-lg text-primary mb-2 leading-tight">Crème de la Mer Absolu</h1>
+<p class="font-label-bold text-label-bold text-tertiary tracking-widest uppercase mb-4">Collection Privée</p>
+<div class="flex items-center gap-2 mb-6">
+<div class="flex text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+<span class="text-on-surface-variant text-label-sm">(48 Reviews)</span>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+                        Uma infusão sublime de extratos botânicos raros e tecnologia de regeneração celular. Esta fórmula luxuosa penetra profundamente para restaurar a luminosidade, firmeza e hidratação da pele madura, deixando um rasto de elegância e frescura.
+                    </p>
+</div>
+<div class="border-y border-outline-variant/30 py-6">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-bold text-label-bold text-on-surface-variant">Preço</span>
+<span class="font-display-lg text-headline-sm text-secondary">45.000 KZS</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex-1">
+<span class="font-label-bold text-label-bold text-on-surface-variant block mb-2">Quantidade</span>
+<div class="flex items-center bg-surface-container rounded-lg px-2 py-1 w-fit border border-outline-variant/20">
+<button class="p-2 hover:text-secondary transition-colors" onclick="updateQty(-1)"><span class="material-symbols-outlined">remove</span></button>
+<input class="w-12 bg-transparent border-none text-center focus:ring-0 font-label-bold" id="quantity" min="1" type="number" value="1"/>
+<button class="p-2 hover:text-secondary transition-colors" onclick="updateQty(1)"><span class="material-symbols-outlined">add</span></button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<button class="w-full bg-secondary text-on-secondary font-label-bold text-label-bold py-5 rounded-lg flex items-center justify-center gap-3 btn-glow transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined">shopping_bag</span>
+                        Comprar Agora
+                    </button>
+<a class="w-full border-2 border-secondary text-secondary font-label-bold text-label-bold py-5 rounded-lg flex items-center justify-center gap-3 hover:bg-primary-container/10 transition-all active:scale-[0.98]" href="https://wa.me/your-number" target="_blank">
+<span class="material-symbols-outlined">chat_bubble</span>
+                        Contacto WhatsApp
+                    </a>
+</div>
+<div class="mt-4 space-y-4">
+<details class="group border-b border-outline-variant/20 pb-4">
+<summary class="flex justify-between items-center cursor-pointer list-none font-label-bold text-label-bold text-on-surface">
+                            Modo de Uso
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-body-md text-on-surface-variant leading-relaxed">
+                            Aplique uma pequena quantidade sobre a pele limpa e seca. Massageie suavemente com movimentos circulares ascendentes até à absorção total. Use diariamente, de manhã e à noite, para resultados ótimos.
+                        </p>
+</details>
+<details class="group border-b border-outline-variant/20 pb-4">
+<summary class="flex justify-between items-center cursor-pointer list-none font-label-bold text-label-bold text-on-surface">
+                            Ingredientes Chave
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="mt-3 text-body-md text-on-surface-variant leading-relaxed">
+                            Ácido Hialurónico Multimolecular, Extrato de Orquídea Imperial, Ouro 24k coloidal e Vitamina E purificada. Sem parabenos ou sulfatos.
+                        </p>
+</details>
+</div>
+</div>
+</div>
+<!-- Luxury Features Section -->
+<section class="mt-section-gap grid grid-cols-1 md:grid-cols-3 gap-gutter py-12 border-t border-outline-variant/10">
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">auto_awesome</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Efeito Radiante</h3>
+<p class="text-body-md text-on-surface-variant">Luminosidade instantânea visível desde a primeira aplicação.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">eco</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Sustentável</h3>
+<p class="text-body-md text-on-surface-variant">Embalagem reciclável e ingredientes de colheita ética.</p>
+</div>
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">local_shipping</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Entrega Premium</h3>
+<p class="text-body-md text-on-surface-variant">Enviamos para todo o país com embalagem de presente exclusiva.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-tertiary/30 mt-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<img alt="AriFran Glamour Logo" class="h-10 w-fit object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIEuhdw-KLJCOGM7DBVrIXvYzhLmqbgjDxI6kxdliRzy9TWnXgv9SfQI1ZtYpQXugxQUTG9XNrwYkQzziUzHX0OqzxECVvWf4GESJMk-Gxvhc3wxWLoZmWpGwa0iIhteGuyiVDPNL2B31HTJ9sxNgyFFd6K_QGNay-wPMiDAsWej4Ww4iaVUcQ96S_3KFHZzYzB4oXAEiQg0Tb25wJwvXn_1WEw3-t-4uSzU9BkWYT-zfeHCgplGTf3rRhY8-asrwifIdS3h7ZPfo"/>
+<p class="text-body-md text-on-surface-variant">A sua dose diária de elegância e cuidado pessoal em Angola.</p>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-primary mb-6">Menu</h4>
+<ul class="flex flex-col gap-3 font-label-sm text-label-sm text-on-surface-variant">
+<li><a class="hover:text-tertiary transition-colors" href="#">Produtos</a></li>
+<li><a class="hover:text-tertiary transition-colors" href="#">Nossa História</a></li>
+<li><a class="hover:text-tertiary transition-colors" href="#">Lojas Físicas</a></li>
+<li><a class="hover:text-tertiary transition-colors" href="#">Newsletter</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-primary mb-6">Suporte</h4>
+<ul class="flex flex-col gap-3 font-label-sm text-label-sm text-on-surface-variant">
+<li><a class="hover:text-tertiary transition-colors" href="#">Contact</a></li>
+<li><a class="hover:text-tertiary transition-colors" href="#">FAQs</a></li>
+<li><a class="hover:text-tertiary transition-colors" href="#">Envios &amp; Devoluções</a></li>
+<li><a class="hover:text-tertiary transition-colors" href="#">Política de Privacidade</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-primary mb-6">Siga-nos</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:text-tertiary transition-all" href="#">Instagram</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:text-tertiary transition-all" href="#">Pinterest</a>
+</div>
+</div>
+</div>
+<div class="px-margin-mobile md:px-margin-desktop py-6 border-t border-outline-variant/10 max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-label-sm text-on-surface-variant opacity-80">
+<span>© 2024 AriFran Glamour. All rights reserved.</span>
+<div class="flex gap-6">
+<span>Luanda, Angola</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">payments</span> Kwanza (KZS)</span>
+</div>
+</div>
+</footer>
+<script>
+        function updateQty(delta) {
+            const qtyInput = document.getElementById('quantity');
+            let val = parseInt(qtyInput.value) + delta;
+            if (val < 1) val = 1;
+            qtyInput.value = val;
+        }
+
+        const thumbs = [
+            { src: 'placeholder', alt: 'A detailed closeup of the luxury face cream texture being swiped on a smooth surface, showing its rich, pearlescent white consistency. Soft orchid and gold reflections glisten on the cream, set against a minimalist white studio background. Professional beauty photography style with soft focus edges.' },
+            { src: 'placeholder', alt: 'The luxury face cream jar shown next to its premium orchid-colored packaging box. The box features delicate gold foil embossing of the AriFran Glamour logo. The setting is a minimalist vanity with a soft silk cloth and a single orchid petal. High-end lifestyle product photography.' },
+            { src: 'placeholder', alt: "A woman's hands with perfectly manicured nails gently applying the white face cream to her cheek. The lighting is warm and flattering, emphasizing glowing, healthy skin. The background is softly blurred with tones of soft gold and lavender. High-fashion editorial beauty style." },
+            { src: 'placeholder', alt: 'A flat lay composition of the luxury face cream jar surrounded by its botanical ingredients like white roses and aloe vera leaves on a clean white background. Sophisticated arrangement with soft shadows and premium lighting, highlighting the natural purity of the product.' }
+        ];
+
+        function changeImage(index) {
+            const mainImg = document.getElementById('main-image');
+            const target = thumbs[index];
+            
+            mainImg.classList.add('opacity-0');
+            setTimeout(() => {
+                mainImg.src = target.src;
+                mainImg.setAttribute('data-alt', target.alt);
+                mainImg.classList.remove('opacity-0');
+            }, 300);
+
+            // Update thumb borders
+            const allThumbs = document.querySelectorAll('.grid.grid-cols-4 button');
+            allThumbs.forEach((btn, idx) => {
+                if (idx === index) {
+                    btn.classList.add('border-secondary');
+                    btn.classList.remove('border-transparent');
+                } else {
+                    btn.classList.remove('border-secondary');
+                    btn.classList.add('border-transparent');
+                }
+            });
+        }
+    </script>
+</body></html>
